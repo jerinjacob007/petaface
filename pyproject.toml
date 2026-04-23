@@ -1,0 +1,15 @@
+[project]
+name = "py-rec"
+version = "0.1.0"
+description = "Face identification with known/unknown folders"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "face_recognition>=1.3.0",
+    "face_recognition_models @ git+https://github.com/Chowdhury-Anik/face_recognition_models.git@Chowdhury-Anik-patch-1",
+    "Pillow>=10.0.0",
+    "streamlit>=1.32.0",
+]
+
+[project.optional-dependencies]
+insightface = ["insightface", "onnxruntime", "opencv-python-headless"]

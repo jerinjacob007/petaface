@@ -1,0 +1,40 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: face_identifier.py",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/face_identifier.py",
+      "args": ["input_images"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Python: face_identifier (strict)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/face_identifier.py",
+      "args": ["input_images", "--tolerance", "0.5"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Python: face_identifier (high accuracy)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/face_identifier.py",
+      "args": ["input_images", "--num-jitters", "10"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Python: Current File",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}

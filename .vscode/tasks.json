@@ -1,0 +1,85 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Install dependencies (uv)",
+      "type": "shell",
+      "command": "uv venv && uv sync",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "presentation": { "reveal": "always" }
+    },
+    {
+      "label": "Install dependencies (pip)",
+      "type": "shell",
+      "command": "pip install -r requirements.txt",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "presentation": { "reveal": "always" }
+    },
+    {
+      "label": "Run face identifier (input_images)",
+      "type": "shell",
+      "command": "python face_identifier.py",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": { "kind": "test", "isDefault": true },
+      "presentation": { "reveal": "always" }
+    },
+    {
+      "label": "Run face identifier (strict tolerance)",
+      "type": "shell",
+      "command": "python face_identifier.py --tolerance 0.5",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "test",
+      "presentation": { "reveal": "always" }
+    },
+    {
+      "label": "Run face identifier (high accuracy)",
+      "type": "shell",
+      "command": "python face_identifier.py --num-jitters 10",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "test",
+      "presentation": { "reveal": "always" }
+    },
+    {
+      "label": "Run face identifier with path",
+      "type": "shell",
+      "command": "python face_identifier.py ${input:inputPath}",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "test",
+      "presentation": { "reveal": "always" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Python: Current File",
+      "type": "shell",
+      "command": "python ${file}",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "test",
+      "presentation": { "reveal": "always" }
+    },
+    {
+      "label": "Run Python file with args",
+      "type": "shell",
+      "command": "python ${file} ${input:pythonArgs}",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "test",
+      "presentation": { "reveal": "always" },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "inputPath",
+      "type": "promptString",
+      "description": "Image or folder path (e.g. input_images or path/to/photo.jpg)",
+      "default": "input_images"
+    },
+    {
+      "id": "pythonArgs",
+      "type": "promptString",
+      "description": "Arguments for the Python script",
+      "default": ""
+    }
+  ]
+}

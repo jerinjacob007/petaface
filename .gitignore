@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.python-version
+
+# Generated output (keep placeholder, ignore crops)
+results/*
+!results/.gitkeep
+unknown_faces/*
+!unknown_faces/.gitkeep
+
+# macOS
+.DS_Store
