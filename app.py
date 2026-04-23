@@ -276,10 +276,10 @@ def main() -> None:
             "model_id": st.session_state.get("last_model", model_id),
             "embedding_dim": fr.embedding_dim,
             "box": {
-                "top": fr.box.top,
-                "right": fr.box.right,
-                "bottom": fr.box.bottom,
-                "left": fr.box.left,
+                "top": int(fr.box.top),
+                "right": int(fr.box.right),
+                "bottom": int(fr.box.bottom),
+                "left": int(fr.box.left),
             },
             "score_kind": fr.best.score_kind,
         }

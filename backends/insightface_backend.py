@@ -55,7 +55,7 @@ class InsightFaceBackend:
         out: list[tuple[FaceBox, np.ndarray]] = []
         for f in faces:
             bbox = f.bbox.astype(int)
-            left, top, right, bottom = bbox[0], bbox[1], bbox[2], bbox[3]
+            left, top, right, bottom = int(bbox[0]), int(bbox[1]), int(bbox[2]), int(bbox[3])
             box = FaceBox(top=top, right=right, bottom=bottom, left=left)
             out.append((box, np.array(f.embedding, dtype=np.float32)))
         return out
